@@ -1,0 +1,19 @@
+datos = input().split()
+
+distancia_metros = int(datos[0])
+vel_max = int(datos[1])
+tiempo_seg = int(datos[2])
+
+vel_media = distancia_metros / tiempo_seg
+Conver_Km_hr = vel_media*3600 / 1000
+porcentaje_vel_max = vel_max * 0.25
+resul_vel_max = vel_max + porcentaje_vel_max
+
+if(distancia_metros < 0 or vel_max < 0 or tiempo_seg < 0):
+    print("VALORES NEGATIVOS")
+elif(Conver_Km_hr <= vel_max):
+    print("OK")  
+elif(Conver_Km_hr > vel_max and Conver_Km_hr <= resul_vel_max):
+    print("MULTA")
+elif(Conver_Km_hr > resul_vel_max):
+    print("CURSO SENSIBILIZACION") 
